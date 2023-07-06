@@ -1,0 +1,518 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.html{
+    scroll-behavior: smooth;
+}
+
+.header {
+    z-index: 1;
+    height: 46px;
+    background-color: black;
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.header>.nav {
+    display: flex;
+}
+
+.nav li {
+    display: inline-block;
+    list-style: none;
+    /* đây là cách để xóa dấu chấm tròn trước mỗi item trong list */
+    position: relative;
+}
+
+.nav li a {
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    line-height: 46px;
+    padding: 0 24px;
+    text-transform: uppercase;
+}
+
+.nav li:hover a {
+    background-color: #ccc;
+    color: black;
+}
+
+.nav .subnav {
+    display: none;
+    top: 100%;
+    position: absolute;
+    box-shadow: 0 0 10px rgb(0, 0, 0, .3);
+}
+
+.nav li:hover .subnav {
+    display: block;
+}
+
+.nav .subnav li {
+    display: block;
+    background-color: white;
+}
+
+.nav .nav-icon {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.nav .subnav li a {
+    line-height: 38px;
+    width: 100%;
+    color: black;
+    background-color: white;
+    padding: 0 16px;
+}
+
+.nav .subnav li a:hover {
+    background-color: #ccc;
+}
+
+.search {
+    height: 46px;
+    width: 46px;
+    background-color: black;
+    cursor: pointer;
+}
+
+.search .search-logo {
+    height: 46px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search .search-logo:hover {
+    background-color: red;
+}
+
+.slider {
+    position: relative;
+    margin-top: 46px;
+    padding-top: 50%;
+    background: url('/img/slide-band1.jpg') top center / cover no-repeat;
+}
+
+.text-content {
+    padding: 32px 16px;
+    position: absolute;
+    bottom: 0;
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+.text-content h2 {
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.content-section {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 64px 16px 64px;
+    justify-content: center;
+    width: 800px;
+    text-align: center;
+}
+
+.content-section .section-heading {
+    font-weight: 400px;
+    font-size: 30px;
+    margin: 10px 0px;
+    letter-spacing: 4px;
+}
+
+.content-section .sub {
+    font-size: 14px;
+    color: #999;
+    margin: 15px 0;
+    font-style: italic;
+}
+
+.content-section .text {
+    text-align: justify;
+    line-height: 1.4;
+    font-size: 15px;
+}
+
+.members {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 32px 0px;
+    display: flex;
+    width: 800px;
+    flex-wrap: nowrap;
+    /*nếu kích thước to quá, (wrap)cho phép xuống dòng, (no-wrap) k cho phép xuống dòng */
+    justify-content: center;
+}
+
+.member-item {
+    width: 33.3333%;
+    /* width: 200px; */
+    margin: 16px;
+    text-align: center;
+}
+
+.member-item .name {
+    margin: 10px 0;
+}
+
+.member-item img {
+    width: 65%;
+    height: 65%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.tour {
+    background: black;
+    color: white;
+}
+
+.tour .content-section {
+    width: 800px;
+}
+
+.month ul li {
+    list-style: none;
+    padding: 10px 16px;
+    background: white;
+    color: #7B8188;
+    font-size: 15px;
+    border-bottom: 1px solid #ccc;
+    text-align: start;
+}
+
+.sold-out {
+    background: #F44336;
+    color: white;
+    padding: 2px 4px;
+    margin-left: 10px;
+}
+
+.quantity {
+    height: 100%;
+    padding: 3px 8px;
+    font-size: 15px;
+    float: right;
+    color: white;
+    margin: 0 16px 0 0;
+    background: black;
+    border-radius: 50%;
+}
+
+.address {
+    /* margin: 0 16px; */
+    display: flex;
+    padding: 32px 0px;
+}
+
+.address .add {
+    background-color: white;
+    width: 33.3333%;
+    padding: 0px 0px 16px;
+    margin: 0 16px 16px;
+    color: black;
+}
+
+.address .add:last-child {
+    margin-right: 0px;
+}
+
+.address .add:first-child {
+    margin-left: 0px;
+}
+
+.add img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    filter: brightness(100%) blur(0);
+    transition: filter 0.3s ease;
+}
+
+.add img:hover {
+    filter: brightness(70%) blur(0);
+}
+
+.add h3 {
+    margin: 15px 0px;
+    text-align: start;
+    font-size: 15px;
+    padding-left: 15px;
+}
+
+.add span {
+    margin: 15px 0px;
+    display: block;
+    text-align: start;
+    padding-left: 15px;
+    font-size: 15px;
+    color: #999;
+}
+
+.add p {
+    margin: 15px 0px;
+    text-align: start;
+    padding-left: 15px;
+    font-size: 15px;
+    color: black;
+}
+
+.add .button {
+    display: flex;
+    margin-left: 15px;
+}
+
+.add button {
+    background-color: black;
+    color: white;
+    padding: 8px 16px;
+    margin: 0 0 16px;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+}
+
+.add button:hover {
+    background-color: #ccc;
+    color: black;
+    border: none;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.modal.open {
+    display: flex;
+}
+
+.container {
+    background: white;
+    width: 900px;
+    max-width: calc(100% - 32px);
+    animation: modalFadeIn 0.4s ease-in-out;
+    /*thêm chuyển động (animation) cho modal*/
+}
+
+.container .header {
+    height: 130px;
+    background: #009688;
+    color: white;
+    padding: 32px 16px;
+    text-align: center;
+    justify-content: center;
+    position: relative;
+}
+
+.header .close {
+    position: absolute;
+    top: 8px;
+    right: 0;
+    padding: 8px 16px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.header .title {
+    font-size: 30px;
+    margin: 10px 0px;
+    letter-spacing: 4px;
+}
+
+.container .body {}
+
+.body label {
+    display: block;
+    font-size: 15px;
+    margin: 20px 0 5px 16px;
+    font-style: bold;
+}
+
+.body .input {
+    width: calc(100% - 32px);
+    padding: 8px;
+    font-size: 15px;
+    margin: 0 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.body .pay {
+    width: calc(100% - 32px);
+    margin: 16px;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 16px;
+    background: #009688;
+    color: white;
+    border: none;
+}
+
+.body .pay:hover {
+    background: #ccc;
+    color: black;
+    border: none;
+}
+
+.modal .footer {
+    display: flex;
+    justify-content: end;
+    margin: 15px 0;
+    padding-right: 16px;
+}
+
+.modal .footer a {
+    margin-left: 5px;
+}
+
+.contact-form {
+    font-size: 15px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    /*xóa các thuộc tính float trước đó*/
+    display: block;
+}
+
+.contact-form {
+    width: 50%;
+}
+
+.infor {
+    padding: 32px 0;
+}
+
+.col-half {
+    width: 50%;
+}
+
+.col-half:first-child {
+    padding-right: 8px;
+}
+
+.col-half:last-child {
+    padding-left: 8px;
+}
+
+.col-half i[class*="ti-"] {
+    margin-right: 15px;
+}
+
+.col-half p {
+    display: flex;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.col-half input {
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    margin: 0 0 8px;
+}
+
+.col-full {
+    width: 100%;
+}
+
+input.submit {
+    display: flex;
+    float: right;
+    left: 10px;
+    width: 20%;
+    margin: 16px 0px;
+    font-size: 15px;
+    padding: 8px 16px;
+    background: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+input.submit:hover {
+    background: #ccc;
+    color: black;
+    border: none;
+}
+
+.img-map {
+    width: 100%;
+    object-fit: cover;
+}
+
+.footer {
+    font-size: 24px;
+    padding: 64px 16px;
+    text-align: center;
+}
+
+.footer .link {
+    height: 30px;
+}
+
+.footer a {
+    color: #494848;
+    text-decoration: none;
+}
+
+.footer .link i {
+    line-height: 30px;
+}
+
+.footer .link i:hover {
+    color: rgba(121, 119, 119, 0.8);
+}
+
+.footer p {
+    color: #494848;
+    margin: 15px 0;
+    font-size: 15px;
+}
+
+/* tạo animation chuyển động */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
