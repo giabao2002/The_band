@@ -2,14 +2,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.html{
-    scroll-behavior: smooth;
+.html {
 }
 
 .header {
@@ -109,26 +109,34 @@ body {
     background: url('../img/slide-band1.jpg') top center / cover no-repeat;
 }
 
-.text-content {
-    padding: 32px 16px;
+.slider .text-content {
     position: absolute;
-    bottom: 0;
+    bottom: 0px;
     color: white;
     text-align: center;
-    width: 100%;
+    width: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.text-content h2 {
-    font-weight: bold;
-    margin-bottom: 40px;
+.text-content h3 {
+    margin: 15px 0;
+    font-size:24px;
+
+}
+
+.text-content p {
+    margin: 15px 0;
+    font-size: 15px;
 }
 
 .content-section {
     margin-left: auto;
     margin-right: auto;
-    padding: 64px 16px 64px;
+    padding: 64px 0 64px;
     justify-content: center;
     width: 800px;
+    max-width: 100%;
     text-align: center;
 }
 
@@ -150,6 +158,7 @@ body {
     text-align: justify;
     line-height: 1.4;
     font-size: 15px;
+    padding: 0 16px;
 }
 
 .members {
@@ -158,6 +167,7 @@ body {
     padding: 32px 0px;
     display: flex;
     width: 800px;
+    max-width: 100%;
     flex-wrap: nowrap;
     /*nếu kích thước to quá, (wrap)cho phép xuống dòng, (no-wrap) k cho phép xuống dòng */
     justify-content: center;
@@ -515,4 +525,22 @@ input.submit:hover {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* RESPONSIVE */
+
+/* PC */
+@media(min-width: 1024px) {
+
+}
+
+/* TABLET */
+@media(min-width: 740px) and (max-width: 1023) {
+    
+    
+}
+
+/* MOBILE */
+@media(max-width:739px) {
+    
 }
