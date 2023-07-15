@@ -12,7 +12,7 @@
 
 <body>
     <div class="main">
-        <div class="header">
+        <div class="header" id="header">
             <!-- begin nav -->
             <ul class="nav">
                 <li><a href="./index.html">Home</a></li>
@@ -137,7 +137,7 @@
                             <form action="">
                                 <div class="row">
                                     <div class="col col-half">
-                                        <input type="text" name="" placeholder="Name" required id="" >
+                                        <input type="text" name="" placeholder="Name" required id="name" >
                                     </div>
                                     <div class="col col-half">
                                         <input type="email" name="" placeholder="Email" required id="" >
@@ -205,6 +205,7 @@
     </div>
 
     <script>
+        //chức năng hiển thị form mua vé
         const buyBtns = document.querySelectorAll('.js-buy-ticket');
         const modal = document.querySelector('.js-modal');
         const modalContainer = document.querySelector('.js-container');
@@ -217,7 +218,6 @@
             modal.classList.remove('open');
         }
 
-
         for (const buyBtn of buyBtns) {
             buyBtn.addEventListener('click', showBuyTickets);
         }
@@ -226,6 +226,8 @@
         modalContainer.addEventListener('click', function (event) {
             event.stopPropagation();
         });
+
+        //chức năng ẩn navigation khi scroll
     </script>
 </body>
 
