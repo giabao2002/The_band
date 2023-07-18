@@ -14,16 +14,15 @@
     <div class="main">
         <div class="header" id="header">
             <!-- begin nav -->
-            <ul class="nav">
-                <li><a href="./index.html">Home</a></li>
+            <ul id="nav" class="nav">
+                <li><a href="#">Home</a></li>
                 <li><a href="#band">Band</a></li>
                 <li><a href="#tour">Tour</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li>
-                    <a href="#">More
-                        <i class="nav-icon ti-angle-down"></i>
+                    <a href="#">More<i class="nav-icon ti-angle-down"></i>
                     </a>
-                    <ul class="subnav">
+                    <ul class="subnav">     
                         <li><a href="#">Merchandise</a></li>
                         <li><a href="#">Extras</a></li>
                         <li><a href="#">Media</a></li>
@@ -34,6 +33,9 @@
             <!-- begin search -->
             <div class="search"><i class="search-logo ti-search"></i></div>
             <!-- end search -->
+            <!-- begin mobile-menu -->
+            <div id="mobile-menu" class="mobile-menu"><i class=" menu-logo ti-menu"></i></div>
+            <!-- end mobile menu -->
         </div>
         <!-- begin slider -->
         <div class="slider">
@@ -228,6 +230,35 @@
         });
 
         //chức năng ẩn navigation khi scroll
+        var header = document.getElementById('header');
+        var mobileMenu = document.getElementById('mobile-menu');
+        //gán chiều cao của header vào biến
+        var headerHeight = header.clientHeight;
+        //Đóng/mở menu khi click
+        mobileMenu.onclick = function () {
+            var isClosed = header.clientHeight === headerHeight;
+            if (isClosed) {
+                header.style.height = 'auto';
+            } else {
+                header.style.height = null;
+            }
+        }
+
+        //Tự động đóng menu khi chọn menu
+        var menuItems = document.querySelectorAll('#nav li a[href*="#"]');
+        for (var i = 0; i < menuItems.length; i++) {
+            var menuItem = menuItems[i];
+
+            menuItem.onclick = function (event) {
+                var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
+                if (isParentMenu) {
+                    event.preventDefault();
+                } else {
+                    header.style.height = null;
+                }
+            }
+        }
+
     </script>
 </body>
 
