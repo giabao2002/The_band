@@ -490,6 +490,15 @@ body {
     line-height: 1.4;
 }
 
+.col-half p a { 
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.col-half p a:hover{
+    opacity: 1;
+}
+
 .col-half input {
     width: 100%;
     padding: 10px;
@@ -535,15 +544,12 @@ input.submit:hover {
 
 .footer .link {
     height: 30px;
+    line-height: 30px;
 }
 
-.footer a {
+.footer .link a {
     color: #494848;
     text-decoration: none;
-}
-
-.footer .link i {
-    line-height: 30px;
 }
 
 .footer .link i:hover {
@@ -556,9 +562,46 @@ input.submit:hover {
     font-size: 15px;
 }
 
-
-
 /* RESPONSIVE */
+
+/* TABLET AND MOBILE */
+@media(max-width: 1023px) {
+    input.submit {
+        padding: 12px;
+    }
+
+    .add .button button {
+        padding: 12px;
+    }
+
+    .col-half input {
+        padding: 14px;
+    }
+
+    .footer .link i {
+        margin: 0 8px;
+        font-size: 48px;
+    }
+
+    .footer .link {
+        height: auto;
+    }
+
+    .footer p {
+        margin-top: 30px;
+        font-size: 40px;
+        display: inline-block;
+    }
+
+    .col-half p {
+        line-height: 1.8;
+    }
+
+    .col-half i {
+        text-align: center;
+        line-height: 1.8;
+    }
+}
 
 /* PC */
 @media(min-width: 1024px) {
@@ -638,6 +681,7 @@ input.submit:hover {
 
     .address .add {
         width: 100%;
+        padding: 0px;
         margin: 0 0 16px;
     }
 
